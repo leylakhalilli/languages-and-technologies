@@ -1,11 +1,18 @@
 package business.concretes;
 
 import business.abstracts.ProgrammingLanguageService;
+import business.requests.languagesRequest.CreateLanguage;
+import business.requests.languagesRequest.DeleteLanguage;
+import business.requests.languagesRequest.GetByIdLanguage;
+import business.requests.languagesRequest.UpdateLanguage;
+import business.responses.GetAllLanguageResponse;
+import business.responses.GetByIdLanguageResponse;
 import dataAccess.abstracts.LanguagesRepository;
 import entities.LanguagesEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,27 +25,41 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguageService {
     }
 
     @Override
-    public List<LanguagesEntity> getAllLanguages() {
-        return null;
+    public List<GetAllLanguageResponse> getAllLanguages() {
+        List<GetAllLanguageResponse> allLanguageResponses = new ArrayList<>();
+        List<LanguagesEntity> languagesEntityList = languagesRepository.findAll();
+
+        for (LanguagesEntity languages : languagesEntityList) {
+            GetAllLanguageResponse languageResponse = new GetAllLanguageResponse();
+            languageResponse.setId(languages.getId());
+            languageResponse.setName(languages.getName());
+
+            allLanguageResponses.add(languageResponse);
+        }
+        return allLanguageResponses;
     }
 
     @Override
-    public LanguagesEntity getById(int id) {
+    public GetByIdLanguageResponse getById(GetByIdLanguage byIdLanguage) {
         return null;
     }
 
+
     @Override
-    public void delete(int id) {
+    public void delete(DeleteLanguage deleteLanguage) {
 
     }
 
     @Override
-    public LanguagesEntity update(int id, LanguagesEntity languagesEntity) {
-        return null;
+    public void update(int id, UpdateLanguage updateLanguage) {
+
     }
 
+
     @Override
-    public LanguagesEntity add(LanguagesEntity languagesEntity) {
-        return null;
+    public void add(CreateLanguage createLanguage) {
+        LanguagesEntity languages = new LanguagesEntity();
+        languages.setName(createLanguage.getName());
+        this.languagesRepository.save(languages);
     }
 }

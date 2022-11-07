@@ -1,17 +1,23 @@
 package business.abstracts;
 
+import business.requests.languagesRequest.CreateLanguage;
+import business.requests.languagesRequest.DeleteLanguage;
+import business.requests.languagesRequest.GetByIdLanguage;
+import business.requests.languagesRequest.UpdateLanguage;
+import business.responses.GetAllLanguageResponse;
+import business.responses.GetByIdLanguageResponse;
 import entities.LanguagesEntity;
 
 import java.util.List;
 
 public interface ProgrammingLanguageService {
-    List<LanguagesEntity> getAllLanguages();
+    List<GetAllLanguageResponse> getAllLanguages();
 
-    LanguagesEntity getById(int id);
+    GetByIdLanguageResponse getById(GetByIdLanguage byIdLanguage);
 
-    void delete(int id);
+    void delete(DeleteLanguage deleteLanguage);
 
-    LanguagesEntity update(int id, LanguagesEntity languagesEntity);
+    void update(int id, UpdateLanguage updateLanguage);
 
-    LanguagesEntity add(LanguagesEntity languagesEntity);
+    void add(CreateLanguage createLanguage);
 }
