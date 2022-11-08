@@ -34,7 +34,7 @@ public class LanguagesController {
 //    }
 
     @PostMapping("/addLanguage")
-    public void add(@RequestBody CreateLanguage createLanguage) {
+    public void add(@RequestBody CreateLanguage createLanguage) throws Exception {
         programmingLanguageService.add(createLanguage);
     }
 
@@ -44,8 +44,8 @@ public class LanguagesController {
     }
 
     @PutMapping("/updateLanguage")
-    public void update(int id, UpdateLanguage updateLanguage) {
-        programmingLanguageService.update(id, updateLanguage);
+    public void update(UpdateLanguage updateLanguage) throws Exception {
+        programmingLanguageService.update(updateLanguage);
 
     }
 }

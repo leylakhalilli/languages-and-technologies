@@ -8,11 +8,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+
 @Table(name = "languages")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class LanguagesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

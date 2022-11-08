@@ -13,11 +13,11 @@ import java.util.List;
 public interface ProgrammingLanguageService {
     List<GetAllLanguageResponse> getAllLanguages();
 
-    GetByIdLanguageResponse getById(GetByIdLanguage byIdLanguage);
+    LanguagesEntity getById(int id) throws Exception;
 
     void delete(DeleteLanguage deleteLanguage);
 
-    void update(int id, UpdateLanguage updateLanguage);
+    void update(UpdateLanguage updateLanguage) throws Exception;
 
-    void add(CreateLanguage createLanguage);
+    void add(CreateLanguage createLanguage) throws Exception;
 }
