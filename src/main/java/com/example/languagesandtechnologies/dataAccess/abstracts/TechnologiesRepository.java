@@ -1,6 +1,6 @@
-package dataAccess.abstracts;
+package com.example.languagesandtechnologies.dataAccess.abstracts;
 
-import entities.TechnologiesEntity;
+import com.example.languagesandtechnologies.entities.TechnologiesEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TechnologiesRepository extends JpaRepository<TechnologiesEntity, Integer> {

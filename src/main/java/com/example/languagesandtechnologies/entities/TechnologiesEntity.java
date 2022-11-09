@@ -1,14 +1,13 @@
-package entities;
+package com.example.languagesandtechnologies.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "technologies")
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class TechnologiesEntity {
@@ -20,7 +19,7 @@ public class TechnologiesEntity {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id", nullable = false)
+    @ManyToOne
+//    @JoinColumn(name = "id", nullable = false)
     private LanguagesEntity languagesEntity;
 }

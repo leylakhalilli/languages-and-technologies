@@ -1,6 +1,6 @@
-package business.abstracts;
+package com.example.languagesandtechnologies.business.abstracts;
 
-import entities.TechnologiesEntity;
+import com.example.languagesandtechnologies.entities.TechnologiesEntity;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package business.requests.technologiesRequest;
+package com.example.languagesandtechnologies.business.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UpdateSubTechnology {
+public class GetAllLanguageResponse {
+    private int id;
     private String name;
 }

@@ -1,12 +1,11 @@
-package webAPI;
+package com.example.languagesandtechnologies.webAPI;
 
 
-import business.abstracts.ProgrammingLanguageService;
-import business.requests.languagesRequest.CreateLanguage;
-import business.requests.languagesRequest.DeleteLanguage;
-import business.requests.languagesRequest.GetByIdLanguage;
-import business.requests.languagesRequest.UpdateLanguage;
-import business.responses.GetAllLanguageResponse;
+import com.example.languagesandtechnologies.business.abstracts.ProgrammingLanguageService;
+import com.example.languagesandtechnologies.business.requests.languagesRequest.CreateLanguage;
+import com.example.languagesandtechnologies.business.requests.languagesRequest.DeleteLanguage;
+import com.example.languagesandtechnologies.business.requests.languagesRequest.UpdateLanguage;
+import com.example.languagesandtechnologies.business.responses.GetAllLanguageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

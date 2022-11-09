@@ -1,8 +1,8 @@
-package business.concretes;
+package com.example.languagesandtechnologies.business.concretes;
 
-import business.abstracts.SubTechnologyService;
-import dataAccess.abstracts.TechnologiesRepository;
-import entities.TechnologiesEntity;
+import com.example.languagesandtechnologies.business.abstracts.SubTechnologyService;
+import com.example.languagesandtechnologies.dataAccess.abstracts.TechnologiesRepository;
+import com.example.languagesandtechnologies.entities.TechnologiesEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

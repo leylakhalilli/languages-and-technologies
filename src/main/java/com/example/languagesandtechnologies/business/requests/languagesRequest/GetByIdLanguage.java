@@ -1,4 +1,4 @@
-package business.requests.languagesRequest;
+package com.example.languagesandtechnologies.business.requests.languagesRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

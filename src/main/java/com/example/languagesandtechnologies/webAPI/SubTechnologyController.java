@@ -1,6 +1,6 @@
-package webAPI;
+package com.example.languagesandtechnologies.webAPI;
 
-import business.abstracts.SubTechnologyService;
+import com.example.languagesandtechnologies.business.abstracts.SubTechnologyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

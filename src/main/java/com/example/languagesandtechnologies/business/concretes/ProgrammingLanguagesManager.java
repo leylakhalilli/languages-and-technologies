@@ -1,12 +1,12 @@
-package business.concretes;
+package com.example.languagesandtechnologies.business.concretes;
 
-import business.abstracts.ProgrammingLanguageService;
-import business.requests.languagesRequest.CreateLanguage;
-import business.requests.languagesRequest.DeleteLanguage;
-import business.requests.languagesRequest.UpdateLanguage;
-import business.responses.GetAllLanguageResponse;
-import dataAccess.abstracts.LanguagesRepository;
-import entities.LanguagesEntity;
+import com.example.languagesandtechnologies.business.abstracts.ProgrammingLanguageService;
+import com.example.languagesandtechnologies.business.requests.languagesRequest.CreateLanguage;
+import com.example.languagesandtechnologies.business.requests.languagesRequest.DeleteLanguage;
+import com.example.languagesandtechnologies.business.requests.languagesRequest.UpdateLanguage;
+import com.example.languagesandtechnologies.business.responses.GetAllLanguageResponse;
+import com.example.languagesandtechnologies.dataAccess.abstracts.LanguagesRepository;
+import com.example.languagesandtechnologies.entities.LanguagesEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

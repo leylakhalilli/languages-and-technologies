@@ -1,16 +1,14 @@
-package entities;
+package com.example.languagesandtechnologies.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 
 @Table(name = "languages")
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -23,8 +21,7 @@ public class LanguagesEntity {
     @Column(name = "name")
     private String name;
 
-    @OneToMany  (mappedBy = "languagesEntity", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+    @OneToMany  (mappedBy = "languagesEntity")
     private List<TechnologiesEntity> technologiesEntities;
 
 }
