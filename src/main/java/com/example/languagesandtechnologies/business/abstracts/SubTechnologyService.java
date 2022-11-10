@@ -1,18 +1,21 @@
 package com.example.languagesandtechnologies.business.abstracts;
 
+import com.example.languagesandtechnologies.business.requests.technologiesRequest.CreateSubTechnology;
+import com.example.languagesandtechnologies.business.requests.technologiesRequest.DeleteSubTechnology;
+import com.example.languagesandtechnologies.business.requests.technologiesRequest.UpdateSubTechnology;
+import com.example.languagesandtechnologies.business.responses.GetAllSubTechnologyResponse;
 import com.example.languagesandtechnologies.entities.TechnologiesEntity;
 
 import java.util.List;
 
 public interface SubTechnologyService {
-    List<TechnologiesEntity> getAllTechnology();
 
-    TechnologiesEntity getTechnologyById(int id);
+    List<GetAllSubTechnologyResponse> getAll();
 
-    TechnologiesEntity add(TechnologiesEntity technologiesEntity);
+    void add(CreateSubTechnology createSubTechnology);
 
-    void delete(int id);
+    void delete(DeleteSubTechnology deleteSubTechnology);
 
-    TechnologiesEntity update(int id, TechnologiesEntity technologiesEntity);
+    void update(UpdateSubTechnology updateSubTechnology);
 
 }
