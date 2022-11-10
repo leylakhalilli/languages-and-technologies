@@ -77,11 +77,19 @@ public class SubTechnologyManager implements SubTechnologyService {
 
     @Override
     public void delete(DeleteSubTechnology deleteSubTechnology) {
-
+        TechnologiesEntity technologiesEntity = technologiesRepository.findById(deleteSubTechnology.getId()).get();
+        technologiesRepository.delete(technologiesEntity);
     }
 
     @Override
     public void update(UpdateSubTechnology updateSubTechnology) {
+        if (isNameEmpty(updateSubTechnology.getNewName()) && isNameExist(updateSubTechnology.getNewName())) {
+            TechnologiesEntity technologies = technologiesRepository.findById(updateSubTechnology.getId()).get();
+
+            technologies.setName(updateSubTechnology.getNewName());
+            technologiesRepository.save(technologies);
+        }
+
 
     }
 

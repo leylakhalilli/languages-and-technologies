@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UpdateSubTechnology {
     private int id;
-    private String name;
+    private String newName;
 }
