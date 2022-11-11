@@ -1,5 +1,6 @@
 package com.example.languagesandtechnologies.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ public class LanguagesEntity {
     @Column(name = "name")
     private String name;
 
+    @JsonIgnore
     @OneToMany  (mappedBy = "languagesEntity")
     private List<TechnologiesEntity> technologiesEntities;
 

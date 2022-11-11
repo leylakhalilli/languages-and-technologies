@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CreateSubTechnology {
     private String name;
-   private String programmingLanguageName;
+       private String programmingLanguageName;
 
 
 }
