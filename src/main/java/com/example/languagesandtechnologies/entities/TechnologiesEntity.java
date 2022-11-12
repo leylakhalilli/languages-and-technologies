@@ -20,6 +20,6 @@ public class TechnologiesEntity {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="languagesEntity_id")
+//    @JoinColumn(name="languagesEntity_id")
     private LanguagesEntity languagesEntity;
 }

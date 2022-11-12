@@ -13,5 +13,5 @@ import java.util.List;
 public class GetAllLanguageResponse {
     private int id;
     private String name;
-    private List<TechnologiesEntity> technologiesEntities;
+//    private List<TechnologiesEntity> technologiesEntities;
 }

@@ -45,32 +45,43 @@ public class SubTechnologyManager implements SubTechnologyService {
 
     @Override
     public void add(CreateSubTechnology createSubTechnology) {
-        if (!isNameExist(createSubTechnology.getName())
-                && !isNameEmpty(createSubTechnology.getName())
-                && !isNameEmpty(createSubTechnology.getProgrammingLanguageName())) {
 
-            TechnologiesEntity technologiesEntity = new TechnologiesEntity();
-            LanguagesEntity languagesEntity = new LanguagesEntity();
+        LanguagesEntity languages = languagesRepository.findById(createSubTechnology.getProgrammingLanguageId())
+                .orElseThrow(() -> new RuntimeException("Programming language id does not exist"));
 
-            technologiesEntity.setName(createSubTechnology.getName());
+        TechnologiesEntity technologiesEntity = new TechnologiesEntity();
+        technologiesEntity.setName(createSubTechnology.getName());
+        technologiesEntity.setLanguagesEntity(languages);
 
-            List<LanguagesEntity> languagesEntities = languagesRepository.findAll();
+        technologiesRepository.save(technologiesEntity);
 
-            for (LanguagesEntity languages : languagesEntities) {
-                if (languages.getName().equals(createSubTechnology.getProgrammingLanguageName())) {
-                    languagesEntity = languages;
-                    break;
-                }
 
-            }
-            if (languagesEntity != null) {
-                TechnologiesEntity technology = new TechnologiesEntity();
-                technology.setName(createSubTechnology.getName());
-                technology.setLanguagesEntity(languagesEntity);
-                technologiesRepository.save(technology);
-            }
-
-        }
+//        if (!isNameExist(createSubTechnology.getName())
+//                && !isNameEmpty(createSubTechnology.getName())
+//                && !isNameEmpty(createSubTechnology.getProgrammingLanguageName())) {
+//
+//            TechnologiesEntity technologiesEntity = new TechnologiesEntity();
+//            LanguagesEntity languagesEntity = new LanguagesEntity();
+//
+//            technologiesEntity.setName(createSubTechnology.getName());
+//
+//            List<LanguagesEntity> languagesEntities = languagesRepository.findAll();
+//
+//            for (LanguagesEntity languages : languagesEntities) {
+//                if (languages.getName().equals(createSubTechnology.getProgrammingLanguageName())) {
+//                    languagesEntity = languages;
+//                    break;
+//                }
+//
+//            }
+//            if (languagesEntity != null) {
+//                TechnologiesEntity technology = new TechnologiesEntity();
+//                technology.setName(createSubTechnology.getName());
+//                technology.setLanguagesEntity(languagesEntity);
+//                technologiesRepository.save(technology);
+//            }
+//
+//        }
 
 
     }
